@@ -12,8 +12,8 @@ class Fanfou
     if (!password.nil? and (password.strip != ''))
       @curl.password = password
     else
-      @curl.username = 'iosfan'
-      @curl.password = 'zzzzzz'
+      @curl.username = '' # Besure to use a test account
+      @curl.password = '' # and password.
     end
   end
   
