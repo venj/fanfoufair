@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <link type="text/css" rel="stylesheet" href="/stylesheets/application.css">
+  <title>饭否关注平衡测试结果</title>
+</head>
+<body>
+  <h2>
+    你好，<%=  @user.name %>
+  </h2>
+  <% if @delta[0].size > 0 %>
+   <table class="user_table">
+    <caption>
+      没有关注你的用户：
+    </caption>
+    <thead>
+      <tr>
+        <th>
+          用户名
+        </th>
+        <th>
+          操作
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @delta[0].each do |u| %>
+      <tr>
+        <% if @show_detail %>
+          <td><img src="<%= u.profile_image_url %>"><%= u.name %></td>
+          <td><a href="http://fanfou.com/<%= u.uid %>" target="_blank">显示用户页</a> | <a href="http://fanfou.com/friend.remove/<%= u.uid %>">取消关注</a></td>
+        <% else %>
+          <td><%= u %></td>
+          <td><a href="http://fanfou.com/<%= u %>" target="_blank">显示用户页</a> | <a href="http://fanfou.com/friend.remove/<%= u %>">取消关注</a></td>
+        <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+   </table>
+  <% else %>
+    <p>
+      你关注的所有人都在关注你。
+    </p>
+  <% end %>
+  <hr>
+  <% if @delta[1].size > 0 %>
+    <table class="user_table">
+     <caption>
+      你没有关注的用户：
+     </caption>
+     <thead>
+       <tr>
+         <th>用户名</th>
+         <th>操作</th>
+       </tr>
+     </thead>
+     <tbody>
+       <% @delta[1].each do |u| %>
+       <tr>
+         <% if @show_detail %>
+           <td><img src="<%= u.profile_image_url %>"><%= u.name %></td>
+           <td><a href="http://fanfou.com/<%= u.uid %>" target="_blank">显示用户页</a> | <a href="http://fanfou.com/friend.add/<%= u.uid %>">增加关注</a></td>
+         <% else %>
+           <td><%= u %></td>
+           <td><a href="http://fanfou.com/<%= u %>" target="_blank">显示用户页</a> | <a href="http://fanfou.com/friend.add/<%= u %>">增加关注</a></td>
+         <% end %>
+       </tr>
+       <% end %>
+     </tbody>
+    </table>
+  <% else %>
+    <p>你在关注所有关注你的人。</p>
+  <% end %>
+</body>
+</html>

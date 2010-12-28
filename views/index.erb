@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <link type="text/css" rel="stylesheet" href="/stylesheets/application.css">
+  <title>饭否关注平衡</title>
+</head>
+<body>
+  <h2>饭否关注平衡</h2>
+  <% if @flash %>
+    <div class="warn"><%= @flash %></div>
+  <% end %>
+  <div id="form">
+    <form action="/check" method="post" accept-charset="utf-8">
+      <table id="form_table">
+        <tr>
+          <td class="form_title">用户名</td><td><input name="username" value="<%= @username %>"></td>
+        </tr>
+        <tr>
+          <td class="form_title">密码</td><td><input type="password" name="password" value=""></td>
+        </tr>
+        <tr>
+          <td class="form_title"><input type="checkbox" name="detail" value="1"></td><td>华丽模式</td>
+        </tr>
+        <tr>
+          <td class="form_title">&nbsp;</td><td><input type="submit" name="" value="提交"></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <div id="description">
+    <h3>使用说明</h3>
+    <ol>
+      <li>如果你的帐号没有设置隐私，你无需输入密码。</li>
+      <li>如果你的饭否帐号设置了隐私，请输入密码。</li>
+      <li>如果你的关注者和关注你的人的差集很大，请谨慎使用“华丽模式”。</li>
+    </ol>
+  </div>
+</body>
+</html>
