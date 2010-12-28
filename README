@@ -1,0 +1,10 @@
+这是饭否关注平衡程序的源代码
+
+部署到了heroku，可惜饭否屏蔽了aws的IP，导致App无法使用。
+
+http://fanfoufair.heroku.com
+
+TODO:
+- 尝试抓取饭否的capcha，让用户输入
+- 做个皮
+
