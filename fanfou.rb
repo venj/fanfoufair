@@ -20,8 +20,10 @@ class Fanfou
   
   def fetch_login
     curl = Curl::Easy.new
-    curl.url = "http://fanfou.com/login?fr=%2F"
+    curl.url = "http://fanfou.com/login"
+    curl.http_post("http://fanfou.com/login", "loginname=iosfan", "loginpass=zzzzzz", "autologin=on", "action=login", "token=6c8fa095")
     curl.perform
+    puts curl.response_code
     curl.body_str
   end
   
