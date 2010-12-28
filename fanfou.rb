@@ -21,7 +21,7 @@ class Fanfou
     @curl.url = @api_base + '/account/verify_credentials.json'
     @curl.perform
     if @curl.response_code == 200
-      FanfouUser.new(JSON.parse(@curl.body_str))
+      true
     else
       false
     end
