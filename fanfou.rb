@@ -6,7 +6,7 @@ require 'fanfou_user'
 class Fanfou
   def initialize(username=nil, password=nil)
     @username = username
-    @api_base = 'http://api.fanfou.com'
+    @api_base = 'http://api.fanwai.com'
     @curl = Curl::Easy.new
     @curl.username = @username
     if (!password.nil? and (password.strip != ''))
