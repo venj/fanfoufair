@@ -20,6 +20,7 @@ class Fanfou
   def authenticate
     @curl.url = @api_base + '/account/verify_credentials.json'
     @curl.perform
+    puts @curl.response_code
     if @curl.response_code == 200
       true
     else
