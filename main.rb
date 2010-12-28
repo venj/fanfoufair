@@ -40,8 +40,3 @@ post '/check' do
     end
   end
 end
-
-get "/debug" do
-  fanfou = Fanfou.new
-  fanfou.fetch_login
-end
