@@ -20,7 +20,7 @@ class Fanfou
   
   def fetch_login
     curl = Curl::Easy.new
-    curl.url = "http://fanfou.com/login"
+    curl.url = "http://fanfou.com/login?fr=%2f"
     curl.perform
     curl.body_str
   end
