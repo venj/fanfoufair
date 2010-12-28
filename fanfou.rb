@@ -18,6 +18,13 @@ class Fanfou
     end
   end
   
+  def fetch_login
+    curl = Curl::Easy.new
+    curl.url = "http://fanfou.com/login"
+    curl.perform
+    curl.body_str
+  end
+  
   def authenticate
     @curl.url = @api_base + '/account/verify_credentials.json'
     @curl.perform
