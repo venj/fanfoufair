@@ -12,14 +12,15 @@ class Fanfou
     if (!password.nil? and (password.strip != ''))
       @curl.password = password
     else
-      @curl.username = 'venj'
-      @curl.password = 'hssmytygcs'
+      @curl.username = 'iosfan'
+      @curl.password = 'zzzzzz'
     end
   end
   
   def authenticate
     @curl.url = @api_base + '/account/verify_credentials.json'
     @curl.perform
+    puts @curl.body_str
     if @curl.response_code == 200
       true
     else
