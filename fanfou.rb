@@ -9,6 +9,7 @@ class Fanfou
     @api_base = 'http://api.fanfou.com'
     @curl = Curl::Easy.new
     @curl.username = @username
+    @curl.http_auth_types = [:basic]
     if (!password.nil? and (password.strip != ''))
       @curl.password = password
     else
