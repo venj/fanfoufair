@@ -12,7 +12,7 @@ class Fanfou
     @curl.userpwd = username + ':' + password
     puts @curl.userpwd
     if (password.nil? or (password.strip == ''))
-      @curl.userpwd = 'iosfan:zzzzzz' # Besure to change to your own test username and password.
+      @curl.userpwd = 'iosfan:zzzzzz' # Change to your own test username and password 
     end
   end
   
@@ -22,7 +22,7 @@ class Fanfou
     if @curl.response_code == 200
       true
     else
-      true #false
+      false
     end
   end
   
