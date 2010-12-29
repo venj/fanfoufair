@@ -38,6 +38,7 @@ class Fanfou
     friends_url = @api_base + '/friends/ids/' + @username + '.json'
     followers_url = @api_base + '/followers/ids/' + @username + '.json'
     @curl.url = friends_url
+    @curl.verbose = true
     @curl.useragent = "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_5; zh-cn) AppleWebKit/533.19.4 (KHTML, like Gecko) Version/5.0.3 Safari/533.19.4"
     @curl.perform
     if @curl.response_code != 200

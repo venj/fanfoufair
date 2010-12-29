@@ -28,11 +28,10 @@ post '/check' do
       else
         if @params[:detail] == '1'
           @show_detail = true
-          @delta[0].map! do |uid|
-            fanfou.show(uid)
-          end
-          @delta[1].map! do |uid|
-            fanfou.show(uid)
+          @delta.each do |e|
+            e.map! do |uid|
+              fanfou.show(uid)
+            end
           end
         end
         erb :check
