@@ -14,7 +14,8 @@ post '/check' do
     unless @params[:password].nil? or @params[:password].strip == ''
       @no_password = true
     end
-    puts @params[:username], @params[:password]
+    puts @params[:username]
+    puts @params[:password]
     fanfou = Fanfou.new(@params[:username], @params[:password])
     unless fanfou.authenticate
       @flash = "用户名或密码错误。"
