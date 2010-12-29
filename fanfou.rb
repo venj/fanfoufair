@@ -4,7 +4,7 @@ require 'curb'
 require 'fanfou_user'
 
 class Fanfou
-  def initialize(username=nil, password=nil)
+  def initialize(username, password)
     @api_base = 'http://api.fanfou.com'
     @curl = Curl::Easy.new
     @curl.username = @username = username
