@@ -9,7 +9,7 @@ class Fanfou
     @curl = Curl::Easy.new
     @curl.http_auth_types = [:basic]
     @username = username
-    @curl.userpwd = username + ':' + passwrod
+    @curl.userpwd = username + ':' + password
     puts @curl.userpwd
     if (password.nil? or (password.strip == ''))
       @curl.userpwd = 'iosfan:zzzzzz' # Besure to change to your own test username and password.
