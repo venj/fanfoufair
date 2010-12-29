@@ -7,14 +7,12 @@ class Fanfou
   def initialize(username, password)
     @api_base = 'http://api.fanfou.com'
     @curl = Curl::Easy.new
-    @curl.username = @username = username
-    puts @curl.username
-    @curl.password = password
-    puts @curl.username
     @curl.http_auth_types = [:basic]
+    @username = username
+    @curl.userpwd = username + ':' + passwrod
+    puts @curl.userpwd
     if (password.nil? or (password.strip == ''))
-      @curl.username = 'iosfan' # Besure to change to your own test
-      @curl.password = 'zzzzzz' # username and password.
+      @curl.userpwd = 'iosfan:zzzzzz' # Besure to change to your own test username and password.
     end
   end
   
