@@ -16,6 +16,8 @@ class Fanfou
       @curl.username = 'iosfan' # Besure to change to your own test
       @curl.password = 'zzzzzz' # username and password.
     end
+    puts @curl.username
+    puts @curl.password
   end
   
   def authenticate
