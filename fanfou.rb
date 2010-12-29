@@ -10,7 +10,6 @@ class Fanfou
     @curl.http_auth_types = [:basic]
     @username = username
     @curl.userpwd = username + ':' + password
-    puts @curl.userpwd
     if (password.nil? or (password.strip == ''))
       @curl.userpwd = 'iosfan:zzzzzz' # Change to your own test username and password 
     end
