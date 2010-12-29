@@ -5,14 +5,12 @@ require 'fanfou_user'
 
 class Fanfou
   def initialize(username=nil, password=nil)
-    @username = username
     @api_base = 'http://api.fanfou.com'
     @curl = Curl::Easy.new
-    @curl.username = @username
+    @curl.username = @username = username
+    @curl.password = password
     @curl.http_auth_types = [:basic]
-    if (!password.nil? and (password.strip != ''))
-      @curl.password = password
-    else
+    if (password.nil? or (password.strip == ''))
       @curl.username = 'iosfan' # Besure to change to your own test
       @curl.password = 'zzzzzz' # username and password.
     end
